@@ -125,7 +125,7 @@
         <button type="submit">Submit</button>
     </form>
 
-    <script>
+<script>
     function submitForm(event) {
         event.preventDefault();
 
@@ -144,6 +144,9 @@
             body: urlEncodedData,
         })
         .then(response => {
+            // Show confirmation message
+            alert('Thank you! Your form was submitted successfully.');
+
             // Redirect to form responses page
             window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
         })
