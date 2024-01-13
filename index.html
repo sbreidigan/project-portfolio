@@ -1,6 +1,7 @@
  <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-rYc+2GkpGlF8VV70D1URug2LoXhr6fBUvqf0XW9x3wACw1dlnfNRZ+4Gy2dVKApVUVTzl9d3lPwzuU5EjQGG5w==" crossorigin="anonymous" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Project Portfolio</title>
@@ -61,19 +62,19 @@
 
     <!-- Business Model Development -->
     <div class="service-category">
-        <h3>Business Model Development</h3>
+        <h3><i class="fas fa-chart-line"></i> Business Model Development</h3>
         <p>Elevate your business model for sustained growth. We specialize in creating models aligned with your objectives and market dynamics.</p>
     </div>
 
     <!-- Market Analysis and Research -->
     <div class="service-category">
-        <h3>Market Analysis and Research</h3>
+        <h3><i class="fas fa-search"></i> Market Analysis and Research</h3>
         <p>Gain a competitive edge through comprehensive market analysis. Understand your audience, competitors, and industry trends for informed decisions.</p>
     </div>
 
     <!-- Operations Improvement -->
     <div class="service-category">
-        <h3>Operations Improvement</h3>
+        <h3><i class="fas fa-cogs"></i> Operations Improvement</h3>
         <ul>
             <li>Process Optimization: Streamline operations for maximum efficiency.</li>
             <li>Continuous Improvement: Implement strategies for ongoing enhancement.</li>
@@ -83,7 +84,7 @@
 
     <!-- Risk Management -->
     <div class="service-category">
-        <h3>Risk Management</h3>
+        <h3><i class="fas fa-exclamation-triangle"></i> Risk Management</h3>
         <ul>
             <li>Identifying and Mitigating Business Risks: Navigate uncertainties with our expertise.</li>
             <li>Crisis Management Planning: Be prepared for unforeseen challenges.</li>
@@ -93,7 +94,7 @@
 
     <!-- Customer Relationship Management (CRM) -->
     <div class="service-category">
-        <h3>Customer Relationship Management (CRM)</h3>
+        <h3><i class="fas fa-users"></i> Customer Relationship Management (CRM)</h3>
         <ul>
             <li>CRM System Implementation: Optimize customer interactions for efficiency.</li>
             <li>Customer Experience Improvement: Elevate customer interactions.</li>
@@ -103,7 +104,7 @@
 
     <!-- Training and Development -->
     <div class="service-category">
-        <h3>Training and Development</h3>
+        <h3><i class="fas fa-graduation-cap"></i> Training and Development</h3>
         <ul>
             <li>Employee Training Programs: Invest in your team's skills and knowledge.</li>
             <li>Leadership Development: Nurture leadership qualities within your organization.</li>
@@ -113,7 +114,7 @@
 
     <!-- Exit Strategies -->
     <div class="service-category">
-        <h3>Exit Strategies</h3>
+        <h3><i class="fas fa-door-open"></i> Exit Strategies</h3>
         <ul>
             <li>Succession Planning: Plan for the future with our services.</li>
             <li>Business Valuation: Understand the value of your business.</li>
@@ -123,7 +124,7 @@
 
     <!-- Digital Transformation -->
     <div class="service-category">
-        <h3>Digital Transformation</h3>
+        <h3><i class="fas fa-globe"></i> Digital Transformation</h3>
         <ul>
             <li>Digital Strategy Development: Embrace the digital era with a well-defined strategy.</li>
             <li>E-commerce Implementation: Expand your reach with effective online sales channels.</li>
@@ -153,30 +154,16 @@
 <!-- Contact -->
 <section id="contact">
     <h2>Contact</h2>
-    <p>Ready to elevate your business? Contact Breidigan Consulting Agency today for a personalized consultation. Let's embark on a journey of growth together.</p>
-    
-    <form onsubmit="submitForm(event)">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="entry.2005620554" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="entry.1045781291" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="entry.1166974658" required>
-
-        <label for="comments">Comments:</label>
-        <textarea id="comments" name="entry.839337160"></textarea>
-
+    <p>Ready to elevate your business? Contact [Your Consulting Agency Name] today for a personalized consultation. Let's embark on a journey of growth together.</p>
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/formResponse" method="POST" target="_blank" onsubmit="redirectConfirmationPage()">
+        <!-- Your form fields go here -->
         <button type="submit">Submit</button>
     </form>
+</section>
 
 <script>
-function submitForm(event) {
-    // No need to prevent default behavior
-
-    // Redirect to the Google Forms URL
-    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewform';
+function redirectConfirmationPage() {
+    window.location.href = 'https://your-username.github.io/confirmation.html';  // Update with your GitHub Pages URL
 }
 </script>
 
