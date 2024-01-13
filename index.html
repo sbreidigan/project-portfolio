@@ -126,7 +126,15 @@
         <textarea id="comments" name="entry.2345678901"></textarea>
 
         <button type="submit">Submit</button>
-    </form>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/formResponse" method="POST" onsubmit="openResponsesPage()" target="_blank">
+            <!-- ... (rest of the form) ... -->
+        </form>
+        
+        <script>
+        function openResponsesPage() {
+            window.open("https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics", "_blank");
+        }
+        </script>
 </section>
 
 <!-- Add your scripts or JavaScript files here if needed -->
