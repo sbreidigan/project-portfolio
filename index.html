@@ -141,7 +141,7 @@ function submitForm(event) {
         body: urlEncodedData,
     })
     .then(response => {
-        if (response.ok) {
+        if (response.status === 200) {
             // Log success message to the console
             console.log('Form submitted successfully:', response);
 
