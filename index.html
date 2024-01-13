@@ -126,35 +126,42 @@
     </form>
 
 <script>
-    function submitForm(event) {
-        event.preventDefault();
+   <script>
+function submitForm(event) {
+    event.preventDefault();
 
-        // Get form data
-        const formData = new FormData(event.target);
+    // Get form data
+    const formData = new FormData(event.target);
 
-        // Convert form data to URL-encoded format
-        const urlEncodedData = new URLSearchParams(formData).toString();
+    // Convert form data to URL-encoded format
+    const urlEncodedData = new URLSearchParams(formData).toString();
 
-        // Submit the form data to Google Forms using fetch
-        fetch('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/formResponse', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded',
-            },
-            body: urlEncodedData,
-        })
-        .then(response => {
-            // Show confirmation message
-            alert('Thank you! Your form was submitted successfully.');
+    // Submit the form data to Google Forms using fetch
+    fetch('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/formResponse', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: urlEncodedData,
+    })
+    .then(response => {
+        // Log success message to the console
+        console.log('Form submitted successfully:', response);
 
-            // Redirect to form responses page
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
-        })
-        .catch(error => {
-            console.error('Error submitting form:', error);
-        });
-    }
-    </script>
+        // Show confirmation message
+        alert('Thank you! Your form was submitted successfully.');
+
+        // Redirect to form responses page
+        window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
+    })
+    .catch(error => {
+        // Log error to the console
+        console.error('Error submitting form:', error);
+        alert('There was an error submitting the form. Please try again.');
+    });
+}
+</script>
+
 </section>
 
 
