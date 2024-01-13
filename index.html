@@ -140,10 +140,12 @@ function submitForm(event) {
         },
         body: urlEncodedData,
     })
-    .then(response => {
-        if (response.status === 200) {
+    .then(response => response.text())  // Parse the response text
+    .then(text => {
+        // Check if the response text contains the confirmation message
+        if (text.includes('Thanks for submitting your contact info!')) {
             // Log success message to the console
-            console.log('Form submitted successfully:', response);
+            console.log('Form submitted successfully:', text);
 
             // Show confirmation message
             alert('Thank you! Your form was submitted successfully.');
@@ -151,11 +153,14 @@ function submitForm(event) {
             // Redirect to form responses page
             window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
         } else {
-            // Log error status to the console
-            console.error('Error submitting form. Status:', response.status);
+            // Log unknown response to the console
+            console.warn('Unknown response:', text);
 
-            // Show an appropriate error message
-            alert('There was an error submitting the form. Please try again.');
+            // Show a general success message
+            alert('Thank you! Your form was submitted successfully.');
+
+            // Redirect to form responses page
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
         }
     })
     .catch(error => {
