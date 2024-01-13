@@ -87,7 +87,10 @@
 <section id="presentations">
     <h2>Project Portfolio</h2>
     <p>Explore our informative presentations to gain insights into our consulting services and past projects we have completed:</p>
-
+    <a href="https://docs.google.com/presentation/d/1yNaEcR0XL4Cq84m6b725y1gtK_CCkOml/edit?usp=sharing" target="_blank">
+        Specialty Care Clinic
+    </a>
+ <!-- The above link is the hyperlink, the below is the embedded presentation" -->
     <iframe src="https://docs.google.com/presentation/d/1yNaEcR0XL4Cq84m6b725y1gtK_CCkOml/embed?start=true&loop=true&delayms=3000" width="600" height="400" frameborder="0" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 </section>
 
@@ -138,14 +141,22 @@ function submitForm(event) {
         body: urlEncodedData,
     })
     .then(response => {
-        // Log success message to the console
-        console.log('Form submitted successfully:', response);
+        if (response.ok) {
+            // Log success message to the console
+            console.log('Form submitted successfully:', response);
 
-        // Show confirmation message
-        alert('Thank you! Your form was submitted successfully.');
+            // Show confirmation message
+            alert('Thank you! Your form was submitted successfully.');
 
-        // Redirect to form responses page
-        window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
+            // Redirect to form responses page
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
+        } else {
+            // Log error status to the console
+            console.error('Error submitting form. Status:', response.status);
+
+            // Show an appropriate error message
+            alert('There was an error submitting the form. Please try again.');
+        }
     })
     .catch(error => {
         // Log error to the console
