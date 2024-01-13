@@ -173,57 +173,10 @@
 
 <script>
 function submitForm(event) {
-    event.preventDefault();
+    // No need to prevent default behavior
 
-    // Get form data
-    const formData = new FormData(event.target);
-
-    // Convert form data to URL-encoded format
-    const urlEncodedData = new URLSearchParams(formData).toString();
-
-    // Submit the form data to Google Forms using fetch
-    fetch('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/formResponse', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: urlEncodedData,
-    })
-    .then(response => {
-        if (response.status === 200) {
-            // Log success message to the console
-            console.log('Form submitted successfully:', response);
-
-            // Show confirmation message
-            alert('Thank you! Your form was submitted successfully.');
-
-            // Redirect to form responses page
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
-        } else {
-            // Log error status to the console
-            console.error('Error submitting form. Status:', response.status);
-
-            // Check if the response contains the confirmation message
-            return response.text();
-        }
-    })
-    .then(text => {
-        if (text.includes('Thanks for submitting your contact info!')) {
-            // Show a general success message
-            alert('Thank you! Your form was submitted successfully.');
-
-            // Redirect to form responses page
-            window.open('https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewanalytics', '_blank');
-        } else {
-            // Show an appropriate error message
-            alert('There was an error submitting the form. Please try again.');
-        }
-    })
-    .catch(error => {
-        // Log error to the console
-        console.error('Error submitting form:', error);
-        alert('There was an error submitting the form. Please try again.');
-    });
+    // Redirect to the Google Forms URL
+    window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScRPkTbTu4_ONTKKkf04H6IlS2_2CmR9mXQ4GklaqeApFhP_w/viewform';
 }
 </script>
 
