@@ -171,7 +171,7 @@
         <label for="Email">Email:</label>
         <input type="email" id="Email" name="entry.1045781291" required>
 
-        <label for="Phone">Phone Number:</label>
+        <label for="Phone">Phone 69 Number:</label>
         <input type="tel" id="Phone" name="entry.1166974658" required>
 
         <label for="Comments">Comments:</label>
@@ -200,17 +200,10 @@ function submitForm(event) {
         body: urlEncodedData,
     })
     .then(response => {
-        if (response.ok) {
-            // Log success message and redirect to thank you page
-            console.log('Form submitted successfully!');
-            window.location.href = 'https://sbreidigan.github.io/project-portfolio/confirmation.html';  // Update with your GitHub Pages URL
-        } else {
-            // Log error message
-            console.error('Error submitting form. Status:', response.status);
-        }
+        // Redirect to thank you page after a successful form submission
+        window.location.href = 'https://sbreidigan.github.io/project-portfolio/thank-you.html';  // Update with the URL of your thank you page
     })
     .catch(error => {
-        // Log catch error
         console.error('Error submitting form:', error);
     });
 }
