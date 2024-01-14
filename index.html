@@ -200,10 +200,17 @@ function submitForm(event) {
         body: urlEncodedData,
     })
     .then(response => {
-        // Redirect to thank you page after a successful form submission
-        window.location.href = 'https://sbreidigan.github.io/project-portfolio/thank-you.html';  // Update with the URL of your thank you page
+        if (response.ok) {
+            // Log success message and redirect to thank you page
+            console.log('Form submitted successfully!');
+            window.location.href = 'https://sbreidigan.github.io/project-portfolio/confirmation.html';  // Update with your GitHub Pages URL
+        } else {
+            // Log error message
+            console.error('Error submitting form. Status:', response.status);
+        }
     })
     .catch(error => {
+        // Log catch error
         console.error('Error submitting form:', error);
     });
 }
