@@ -183,8 +183,7 @@
 
 <script>
 function submitForm(event) {
-    event.preventDefault();
-
+    // No need to prevent default action, let the form submit to Google Forms
     // Get form data
     const formData = new FormData(event.target);
 
@@ -201,16 +200,15 @@ function submitForm(event) {
     })
     .then(response => {
         if (response.ok) {
-            // Log success message and redirect to thank you page
+            // Log success message (optional)
             console.log('Form submitted successfully!');
-            window.location.href = 'https://sbreidigan.github.io/project-portfolio/confirmation.html';  // Update with your GitHub Pages URL
         } else {
-            // Log error message
+            // Log error message (optional)
             console.error('Error submitting form. Status:', response.status);
         }
     })
     .catch(error => {
-        // Log catch error
+        // Log catch error (optional)
         console.error('Error submitting form:', error);
     });
 }
